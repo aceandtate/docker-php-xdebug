@@ -1,8 +1,8 @@
 FROM php:7.0-apache
 
-MAINTAINER Emilien Kenler <hello@emilienkenler.com>
+MAINTAINER Joris Fritzsche
 
-RUN apt-get update && apt-get install -y git libpq-dev libmcrypt-dev zlib1g-dev libicu-dev php-soap g++ graphviz && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y libxml2-dev git libpq-dev libmcrypt-dev zlib1g-dev libicu-dev php-soap g++ graphviz && rm -rf /var/lib/apt/lists/*
 RUN docker-php-ext-install pdo_pgsql pdo_mysql mbstring mcrypt zip sockets intl bcmath soap
 
 RUN curl -o /usr/local/bin/composer https://getcomposer.org/composer.phar && \
